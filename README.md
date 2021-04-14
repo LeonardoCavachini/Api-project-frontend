@@ -49,18 +49,24 @@ adicione na constante `const keyPrivate` sua chave privada da API da marvel.
 
 para iniciar o porjeto no backend voĉe precisará fazer o clone do projeto no repositorio do backend.
 
-- `git clone https://github.com/LeonardoCavachini/Api-project-frontend.git`
+- `git clone https://github.com/LeonardoCavachini/Api-project-backend.git`
 
 - `cd Api-project-backend`
 
 - adicione um arquivo `.env` na raiz do projeto com as sehuintes vaiaveis de ambiente.
 
 {
+
 MYSQL_USER=`exemplo: root`
+
 MYSQL_PASSWORD=`exemplo: 123`
+
 HOSTNAME=`exemplo: localhost`
+
 PORT_NUMBER=`exemplo: 3306`
+
 DB_NAME=`exemplo: meu-db`
+
 }
 
 - Inicie o projeto com `npm start`
