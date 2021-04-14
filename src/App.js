@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {
+  BrowserRouter, Switch, Route, Redirect,
+} from 'react-router-dom';
+import GlobalStyle from './style/GlobalStyle';
+import Provider from './context/Provider';
+import Login from './pages/Login/index';
+import Main from './pages/Main';
+import Characters from './pages/characters';
+import Register from './pages/Register';
+import Profile from './pages/profile';
+import Comics from './pages/Comics';
+import Favorites from './pages/Favorites';
+import ComicsById from './pages/comicsById';
+import CharactersById from './pages/charactersById';
+import CharactersFavorites from './pages/favCharacters';
+import ComicsFavorites from './pages/favComics';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider>
+      <BrowserRouter>
+        <GlobalStyle />
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/login" />
+          </Route>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/favorites" component={Favorites} />
+          <Route exact path="/main" component={Main} />
+          <Route exact path="/characters-fav" component={CharactersFavorites} />
+          <Route exact path="/comics-fav" component={ComicsFavorites} />
+          <Route exact path="/characters" component={Characters} />
+          <Route exact path="/comics" component={Comics} />
+          <Route path="/profile/:id" component={Profile} />
+          <Route path="/comics/:id" component={ComicsById} />
+          <Route path="/characters/:id" component={CharactersById} />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
