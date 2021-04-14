@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# API Project frontEnd
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Pagina de Herois e HQs da Marvel
 
-## Available Scripts
+## Tabela de conteúdos
 
-In the project directory, you can run:
+- [Sobre](https://github.com/LeonardoCavachini/Api-project-frontend#Sobre)
+- [Instalação](https://github.com/LeonardoCavachini/Api-project-frontend#Instalação)
+- [Como-usar](https://github.com/LeonardoCavachini/Api-project-frontend#Como-usar)
+- [Tecnologias](https://github.com/LeonardoCavachini/Api-project-frontend#Tecnologias)
 
-### `npm start`
+## Sobre
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Aplicação mostra um catálogo de Heróis e HQs para serem escolhidos e apartir dessa escolha o usuário é redirecionado para uma página do detalhamento do herói/HQs escolhido.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Instalação
 
-### `npm test`
+#### Pré-requisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Certifique-se de ter instalado em sua maquina estas ferramentas: Git, Node.js, e um editor de textos como o VSCode.
 
-### `npm run build`
+#### Rodando a aplicação localmente
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone o repositório
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `git clone https://github.com/LeonardoCavachini/Api-project-frontend.git`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Entre na pasta do repositório que você acabou de clonar:
 
-### `npm run eject`
+- `cd Api-project-frontend`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Instale as dependências:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `npm install`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+agora será necessário adicionar algumas permissões no código.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. na pasta src/service/marveAPI.js
 
-## Learn More
+adicione na constante `const keyPublic` sua chave publica da API da marvel.
+adicione na constante `const keyPrivate` sua chave privada da API da marvel.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Inicie o projeto com `npm start`  
+  Por padrão o React procura rodar as aplicações na porta 3000.
+  Uma página no browser será aberta com a aplicação.  
+  Divirta-se!!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Inicie o projeto no backend:
 
-### Code Splitting
+para iniciar o porjeto no backend voĉe precisará fazer o clone do projeto no repositorio do backend.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- `git clone https://github.com/LeonardoCavachini/Api-project-frontend.git`
 
-### Analyzing the Bundle Size
+- `cd Api-project-backend`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- adicione um arquivo `.env` na raiz do projeto com as sehuintes vaiaveis de ambiente.
 
-### Making a Progressive Web App
+{
+MYSQL_USER=`exemplo: root`
+MYSQL_PASSWORD=`exemplo: 123`
+HOSTNAME=`exemplo: localhost`
+PORT_NUMBER=`exemplo: 3306`
+DB_NAME=`exemplo: meu-db`
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Inicie o projeto com `npm start`
 
-### Advanced Configuration
+  O projeto irá iniciar o backend na porta 3001.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Como Usar
 
-### Deployment
+Ao iniciar a aplicação o usuário deverá logar-se, caso não tenha um login cadastrado havera um botão para o mesmo.
+obs: a senha deverá ter pelo menos 8 caracteres.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+após login o usuário será direcionado para uma pagina onde poderá escolher entre HQs e heróis.
 
-### `npm run build` fails to minify
+com a opção escolhida o usuário será direcionado a uma página onde encontrar alguns dos HQs/herois.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+clicando em um card escolhido ser direcionado para uma pagina informação, onde terá açgumas informações e poderá favoritar o mesmo.
+
+## Tecnologias
+
+Tecnologias utilizadas para construção da aplicação:
+
+- Node
+- React
+
+Ferramentas para controle e organização de código:
+
+- ESLint
+- Git
